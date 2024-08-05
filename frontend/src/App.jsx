@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 
-function App() {
+const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<LandingPage />} />
+    )
+  );
 
-  return (
-    <>
-      <h1>React</h1>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
