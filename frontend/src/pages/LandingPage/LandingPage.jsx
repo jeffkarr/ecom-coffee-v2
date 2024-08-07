@@ -27,7 +27,7 @@ const LandingPage = () => {
     <Container fluid className="landingPic">
       <Row className="landing-btn-row">
         <Col xs={{offset: 7, size: 3}} sm={{offset: 8, size: 2}}>
-          <Button size={btnSize} color="danger" href="/home/" >
+          <Button size={btnSize} color="danger" href="home" >
             Browse Products
           </Button>
         </Col>
