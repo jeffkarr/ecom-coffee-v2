@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CustomNavBar from "../../components/CustomNavBar";
 import { Container } from "reactstrap";
 import {
   Card,
@@ -9,70 +10,15 @@ import {
   CardBody
 } from "reactstrap";
 
+
 import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div><h1>Home Page</h1></div>
-    // <div>
-    //   <CustomNavbar />
-    //   <Categories />
-    //   <section>
-    //     <Container fluid>
-    //       <CardDeck className="mt-5">
-    //         <Card>
-    //           <CardImg
-    //             src={require("../../assets/images/coffee-category-image.jpg")}
-    //             id="coffee-category-img"
-    //           />
-    //           <CardBody>
-    //             <CardTitle className="text-center">
-    //               Coffee Collections
-    //               <Link to="/coffees/">
-    //                 <Button className="ml-3" color="danger">
-    //                   Shop Now !
-    //                 </Button>
-    //               </Link>
-    //             </CardTitle>
-    //           </CardBody>
-    //         </Card>
-    //         <Card>
-    //           <CardImg
-    //             src={require("../../assets/images/tea-category-image.jpg")}
-    //             id="tea-category-img"
-    //           />
-    //           <CardBody>
-    //             <CardTitle className="text-center">
-    //               Tea Collections
-    //               <Link to="/teas/">
-    //                 <Button className="ml-3" color="danger">
-    //                   Shop Now !
-    //                 </Button>
-    //               </Link>
-    //             </CardTitle>
-    //           </CardBody>
-    //         </Card>
-    //         <Card>
-    //           <CardImg
-    //             src={require("../../assets/images/accessories-category-image.jpg")}
-    //             className="homepage-img"
-    //             id="accessories-category-img"
-    //           />
-    //           <CardBody>
-    //             <CardTitle className="text-center">
-    //               Accessories
-    //               <Link to="/accessories/">
-    //                 <Button className="ml-3" color="danger">
-    //                   Shop Now !
-    //                 </Button>
-    //               </Link>
-    //             </CardTitle>
-    //           </CardBody>
-    //         </Card>
-    //       </CardDeck>
-    //     </Container>
-    //   </section>
-    // </div>
+    <div>
+       <CustomNavBar />
+
+    </div>
   )
 }
 
