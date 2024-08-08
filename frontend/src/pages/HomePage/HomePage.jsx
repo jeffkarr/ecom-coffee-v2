@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 import CustomNavBar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
+
 import coffeeCategoryImg from "../../assets/images/coffee-category-image.jpg";
 import teaCategoryImg from "../../assets/images/tea-category-image.jpg";
 import accessoriesCategoryImg from "../../assets/images/accessories-category-img.jpg";

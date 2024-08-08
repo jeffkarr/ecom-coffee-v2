@@ -1,0 +1,52 @@
+{
+    "coffeeItems": [
+      { "itemId": "C1",
+        "category": "coffee",
+        "name": "Sumatra Coffee",
+        "price": "12.00",
+        "description": "some of the finest arabica coffees",
+        "image": "../images/coffee/sumatra-coffee-cropped.png"
+      },
+      { 
+        "itemId": "C2",
+        "category": "coffee",
+        "name": "Java Coffee",
+        "price": "10.00",
+        "description": "one of the most popular Indonesian coffees from the island of Java in Indonesia.",
+        "image": "../images/coffee/java-coffee-cropped.jpg"
+      },
+      { 
+        "itemId": "C3",
+        "category": "coffee",
+        "name": "Jamaican Blue Mountain Coffee",
+        "price": "20.00",
+        "description": "from the Blue Mountain region of Jamaica.",
+        "image": "../images/coffee/jamaican-coffee-cropped.png"
+      },
+      { 
+        "itemId": "C4",
+        "category": "coffee",
+        "name": "Hawaiian Kona Coffee",
+        "price": "16.00",
+        "description": "along the western side of the big island of Hawaii, Kona coffee farms.", 
+        "image": "../images/coffee/kona-coffee-cropped.jpg"
+      },
+      { 
+        "itemId": "C5",
+        "category": "coffee",
+        "name": "Costa Rican Coffee",
+        "price": "14.00",
+        "description": "grown in the high mountain volcanic soils of Costa Rica's central valley.", 
+        "image": "../images/coffee/costa-rican-coffee-cropped.png"
+      },
+      {
+        "itemId": "C6",
+        "category": "coffee",
+        "name": "Guatemalan Coffee",
+        "price": "12.00",
+        "description": "from the north highland region, this coffee has distinctive but mild fruit.",
+       "image": "../images/coffee/guatemalan-coffee-cropped.jpg"
+      }
+    ]
+  }
+  
