@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {
   Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -16,14 +15,10 @@ import { FaCoffee, FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import "./CustomNavBar.css"
 
-const CustomNavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const CustomNavBar = ({wishItemsCount, cartItemsCount}) => {
   const [cartModal, setCartModal] = useState(false); 
   const [wishModal, setWishModal] = useState(false);
 
-  const toggle = ()=> {
-    setIsOpen(!isOpen)
-  };
   const toggleWishModal = (e)=> {
     e.preventDefault();
     setWishModal(!wishModal);
@@ -40,34 +35,32 @@ const CustomNavBar = () => {
           <FaCoffee className="mx-2"/>
           Karr's Coffee & Tea Company
         </NavbarBrand>
-        <Collapse isOpen={isOpen} navbar className="justify-content-end">
-            <NavbarToggler onClick={toggle} />
-            <Nav className="ml-auto " navbar>
-              <NavItem>
+        <Collapse navbar className="justify-content-end">
+            <Nav className="ml-auto" navbar>
+              <NavItem className="align-item-center">
                 <NavLink onClick={toggleWishModal} className="mr-3">
                   <Row>
-                    <FaHeart /> 
-                    {/* <Badge color="danger" className="ml-2">
+                    <FaHeart color='red' /> 
+                    <Badge color="dark" className="ml-2 mt-1">
                       {wishItemsCount}
-                    </Badge> */}
+                    </Badge>
                   </Row>
-                  <Row>Your Wishlist</Row>
+                  <Row><p className="text-white mb-0">Your Wishlist</p></Row>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className="align-item-center">
                 <NavLink onClick={toggleCartModal} className="mx-5">
                   <Row>
-                    <FaShoppingCart />
-                    {/* <Badge color="danger" className="ml-2">
+                    <FaShoppingCart color='white'/>
+                    <Badge color="dark" className="ml-2 mt-1">
                       {cartItemsCount}
-                    </Badge> */}
+                    </Badge>
                   </Row>
-                  <Row>Your Cart</Row>
+                  <Row><p className="text-white mb-0">Your Cart</p></Row>
                 </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
-
       </Navbar>
     </div>
 
