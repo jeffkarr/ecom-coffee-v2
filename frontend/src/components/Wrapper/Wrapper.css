@@ -1,0 +1,13 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: auto;
+  }
+
+  .wrapper-container {
+    margin: 1% 5%;
+  }

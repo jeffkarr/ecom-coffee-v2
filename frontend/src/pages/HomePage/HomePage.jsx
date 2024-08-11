@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { Container } from "reactstrap";
 import {
   Row,
@@ -13,7 +12,6 @@ import {
 } from "reactstrap";
 import CustomNavBar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
-
 import coffeeCategoryImg from "../../assets/images/coffee-category-image.jpg";
 import teaCategoryImg from "../../assets/images/tea-category-image.jpg";
 import accessoriesCategoryImg from "../../assets/images/accessories-category-img.jpg";
@@ -23,10 +21,10 @@ import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div style={{"height": "100vh", "background-color":  "#e6e6e6"}}>
+    <div>
       <CustomNavBar wishItemsCount="0" cartItemsCount={0}/>
       <Categories />
-        <Container fluid>
+        <Container fluid className="home-container">
         <CardGroup className="m-4">
               <Card className="m-2">
                 <CardImg
