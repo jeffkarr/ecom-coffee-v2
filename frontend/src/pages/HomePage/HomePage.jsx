@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { Container } from "reactstrap";
 import {
   Row,
@@ -22,10 +21,10 @@ import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div style={{"height": "100vh", "background-color":  "#e6e6e6"}}>
+    <div>
       <CustomNavBar wishItemsCount="0" cartItemsCount={0}/>
       <Categories />
-        <Container fluid>
+        <Container fluid className="home-container">
         <CardGroup className="m-4">
               <Card className="m-2">
                 <CardImg
@@ -41,7 +40,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Coffee Collections</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                      <Link to="/coffees/">
+                      <Link to="/coffees">
                         <Button className="ml-3" color="danger">
                           Shop Now !
                         </Button>
@@ -65,7 +64,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Tea Collections</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                      <Link to="/teas/">
+                      <Link to="/teas">
                         <Button className="ml-3" color="danger">
                           Shop Now !
                         </Button>
@@ -89,7 +88,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Accessories</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                        <Link to="/accessories/">
+                        <Link to="/accessories">
                           <Button className="ml-3" color="danger">
                             Shop Now !
                           </Button>

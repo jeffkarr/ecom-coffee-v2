@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    container_name: ecomm_db
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-init-db.d
+  server:
+    container_name: ecomm_backend
+    build:
+        context: ./backend
+        dockerfile: Dockerfile
+    ports:
+        - "4100:4100"
+    command: "npm start"
+    environment:
+        DATABASE_URL: "${DB_URL}"
+        PORT: "${DB_PORT}"
+    # depends_on:
+    #     postgres:
+    #         condition: service_healthy
+volumes:
+  db:
+    driver: local
