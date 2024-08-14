@@ -6,7 +6,7 @@
     min-width: 400px;
   }
   .coffee-card {
-    width: 20em;
+    width: 21em;
     height: auto;
     float: left;
     display: block;
@@ -14,7 +14,7 @@
     text-align: center;
     box-sizing: border-box;
     padding: 10px;
-    margin: 20px;
+    margin: 20px 10px;
     border: 1px solid transparent;
   }
   .coffee-card-img {

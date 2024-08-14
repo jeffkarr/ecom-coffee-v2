@@ -40,7 +40,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Coffee Collections</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                      <Link to="/coffees/">
+                      <Link to="/coffees">
                         <Button className="ml-3" color="danger">
                           Shop Now !
                         </Button>
@@ -64,7 +64,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Tea Collections</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                      <Link to="/teas/">
+                      <Link to="/teas">
                         <Button className="ml-3" color="danger">
                           Shop Now !
                         </Button>
@@ -88,7 +88,7 @@ const HomePage = () => {
                         <h5 className="mb-0">Accessories</h5>
                       </Col>
                       <Col xs="auto" className="text-start">
-                        <Link to="/accessories/">
+                        <Link to="/accessories">
                           <Button className="ml-3" color="danger">
                             Shop Now !
                           </Button>

@@ -31,32 +31,32 @@ const Categories = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar>
             <NavItem className="category-nav-item">
-              <NavLink href="/deals/" className="mx-4">
+              <NavLink href="/deals" className="mx-4">
                 Hot Deals
               </NavLink>
             </NavItem>
             <NavItem className="category-nav-item">
-              <NavLink href="/coffees/" className="mx-4">
+              <NavLink href="/coffees" className="mx-4">
                 Coffees
               </NavLink>
             </NavItem>
             <NavItem className="category-nav-item">
-              <NavLink href="/teas/" className="mx-4">
+              <NavLink href="/teas" className="mx-4">
                 Teas
               </NavLink>
             </NavItem>
             <NavItem className="category-nav-item">
-              <NavLink href="/accessories/" className="mx-4 ">
+              <NavLink href="/accessories" className="mx-4 ">
                 Accessories
               </NavLink>
             </NavItem>
             <NavItem className="category-nav-item">
-              <NavLink href="/wish/" className="mx-4">
+              <NavLink href="/wish" className="mx-4">
                 Wish List
               </NavLink>
             </NavItem>
             <NavItem className="category-nav-item">
-              <NavLink href="/cart/" className="ml-4">
+              <NavLink href="/cart" className="ml-4">
                 Shopping Cart
               </NavLink>
             </NavItem>
