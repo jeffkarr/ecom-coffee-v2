@@ -19,7 +19,17 @@ router.get('/coffeeItems', async (req, res) => {
   console.log('----- results from call to db ----');
   console.log(result.rows);
   
-  // pgClient.end();
+  res.send(result);
+});
+
+router.get('/getDealItems', async (req, res) => {
+
+  // await pgClient.connect();
+ 
+  const result = await pgClient.query('select * from deal_items');
+
+  console.log('----- results from call to db ----');
+  console.log(result.rows);
   
   res.send(result);
 });

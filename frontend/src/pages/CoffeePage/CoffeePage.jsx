@@ -122,7 +122,7 @@ const CoffeePage = () => {
                       </CardBody>
                     </div>  
                     <Form>
-                      <Container fluid className="p-0">
+                      <div>
                         <Row className="coffee-qty-area">
                           <p className="mx-3 pt-2 pl-5">
                             <b>Quantity</b>
@@ -168,7 +168,7 @@ const CoffeePage = () => {
                             </Button>
                           </Col>
                         </Row>
-                      </Container>
+                      </div>
                     </Form>
                   </Card>
                 </Col>

@@ -7,6 +7,7 @@ import {
 import LandingPage from './pages/LandingPage';
 import HomePage from './pages/HomePage';
 import CoffeePage from './pages/CoffeePage';
+import DealPage from './pages/DealPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
   {
     path: '/coffees',
     element: <CoffeePage />,
+    errorElement: <NotFoundPage />
+  },
+  {
+    path: '/deals',
+    element: <DealPage />,
     errorElement: <NotFoundPage />
   }
 ]);
