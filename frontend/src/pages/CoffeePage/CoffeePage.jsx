@@ -3,7 +3,7 @@ import CustomNavbar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
 import Wrapper from "../../components/Wrapper";
 import { Container } from "reactstrap";
-import { Card, CardImg, CardBody, Button } from "reactstrap";
+import { Card, CardBody, Button } from "reactstrap";
 import { Row, Col, Form, Input } from "reactstrap";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
@@ -12,7 +12,6 @@ import "./CoffeePage.css";
 const CoffeePage = () => {
   const [coffees, setCoffees] = useState([]);
   const [coffeeQty, setCoffeeQty] = useState(1);
-  const [isScreenExtraSmall, setIsScreenExtraSmall] = useState(false);
   
   useEffect( () => {
 
@@ -31,16 +30,6 @@ const CoffeePage = () => {
     }
     fetchCoffeeItems();
 
-    // function handleResize() {
-    //   const screenIsXs = window.matchMedia('(max-width: 576px)').matches;
-    //   setIsScreenExtraSmall( screenIsXs );
-    //   // console.log(`screen size is ${dimensions} isScreenExtraSmall ${screenIsXs}`);
-    // }
-  
-    // window.addEventListener('resize', handleResize);
-    // return _ => {
-    //   window.removeEventListener('resize', handleResize);
-    // }
   }, []);
 
   const handleChange = (e) => {
