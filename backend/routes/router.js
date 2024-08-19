@@ -12,8 +12,6 @@ const router = express.Router();
 
 router.get('/coffeeItems', async (req, res) => {
 
-  // await pgClient.connect();
- 
   const result = await pgClient.query('select * from coffee_items');
 
   console.log('----- results from call to db ----');
@@ -24,9 +22,17 @@ router.get('/coffeeItems', async (req, res) => {
 
 router.get('/getDealItems', async (req, res) => {
 
-  // await pgClient.connect();
- 
   const result = await pgClient.query('select * from deal_items');
+
+  console.log('----- results from call to db ----');
+  console.log(result.rows);
+  
+  res.send(result);
+});
+
+router.get('/getTeaItems', async (req, res) => {
+
+  const result = await pgClient.query('select * from tea_items');
 
   console.log('----- results from call to db ----');
   console.log(result.rows);
