@@ -4,7 +4,7 @@ import CustomNavbar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
 import Wrapper from "../../components/Wrapper";
 import { Container } from "reactstrap";
-import { CardGroup, Card, CardImg, CardBody, Button } from "reactstrap";
+import { Card, CardBody, Button } from "reactstrap";
 import { Row, Col, Form, Input } from "reactstrap";
 import { FaHeart, FaShoppingCart } from "react-icons/fa"; 
 
@@ -100,7 +100,7 @@ const DealPage = ( ) => {
       { deals.length > 0 ?
         deals.map(item => (
           <>
-            <Card className="deal-card mt-5">
+            <Card key={item.id} className="deal-card mt-5">
               <div className="m-3">
                 <div className="deal-img-container">
                   <div className="deal-overlay"></div>
@@ -138,7 +138,7 @@ const DealPage = ( ) => {
                       <Col className="px-0">
                         <Input
                           className="deal-qty-select"
-                          name="coffeeQty"
+                          name="DealQty"
                           type="select"
                           onChange={handleChange}
                         >

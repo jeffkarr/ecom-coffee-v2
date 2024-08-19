@@ -118,3 +118,64 @@ CREATE TABLE IF NOT EXISTS coffee_items (
     'This Espresso Machine brings the coffeehouse to your home. So simple to use!',
     '../images/deal/espresso-machine.jpg'
   )
+
+  DROP TABLE IF EXISTS tea_items;
+
+  CREATE TABLE IF NOT EXISTS tea_items (
+      id character(2) PRIMARY KEY,
+      category character varying(255) NOT NULL,
+      name character varying(255) NOT NULL,
+      price numeric(5,2) NOT NULL,
+      description character varying(255) NOT NULL,
+      image character varying(255) NOT NULL
+  );
+
+  INSERT INTO tea_items VALUES      
+  (
+    'T1',
+    'tea',
+    'Black Tea',
+    7.00,
+    'Typically more robust and pronounced flavors. And when brewed appropriately, a higher caffeine content compared to other teas.',
+    '../images/tea/black-tea-tin-display.png'
+  ),
+  (
+    'T2',
+    'tea',
+    'Green Tea',
+    '9.00',
+    'Green teas tend to have less caffeine (10-30% of coffee). Greens also tend to produce more subtle flavors with many undertones and accents that connoisseurs treasure.',
+    '../images/tea/green-tea-tin-display.png'
+  ),
+  (
+    'T3',
+    'tea',
+    'Earl Grey Tea',
+    '6.00',
+    'Earl Grey is one of the most recognized flavored teas in the world.',
+    '../images/tea/earl-grey-tin-display.png'
+  ),
+  (
+    'T4',
+    'tea',
+    'Chamomile Tea',
+    '8.00',
+    'Calming chamomile has been around for ages, dating back thousands of years, at least to ancient Egyptian times. It is most famously known as a relaxing herb.',
+    '../images/tea/chamomile-tea-tin-display.png'
+  ),
+  (
+    'T5',
+    'tea',
+    'Jasmine Tea',
+    7.00,
+    'The world soon fell in love with jasmine’s perfumed aroma and delicate flavor and has been craving the glorious blossom ever since.',
+    '../images/tea/jasmine-tea-tin-display.png'
+  ),
+  (
+    'T6',
+    'tea',
+    'Chai Tea',
+    10.00,
+    'The Hindi term chai means a mix of spices steeped into a tea-like beverage.',
+    '../images/tea/chai-tea-tin-display.png'
+  )
