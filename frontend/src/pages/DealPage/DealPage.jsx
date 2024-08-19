@@ -128,12 +128,14 @@ const DealPage = ( ) => {
                   </CardBody>
                 </div>
                 <Form>
-                  <div>
+                  <Container>
                     <Row className="deal-qty-area">
-                      <p className="mx-3 pt-2 pl-5">
+                      <p>
                         <b>Quantity</b>
                       </p>
-                      <Col>
+                    </Row>
+                    <Row>
+                      <Col className="px-0">
                         <Input
                           className="deal-qty-select"
                           name="coffeeQty"
@@ -148,7 +150,7 @@ const DealPage = ( ) => {
                         </Input>
                       </Col>
                     </Row>
-                    <Row className="deal-btn-area text-center">
+                    <Row className="deal-btn-area text-center mt-3">
                       <Col xs="12" sm="6" className="align-items-center my-2">
                         <Button
                           onClick={onAddDealToWish}
@@ -174,7 +176,7 @@ const DealPage = ( ) => {
                         </Button>
                       </Col>
                     </Row>
-                  </div>
+                  </Container>
                 </Form>
               </div>
             </Card>
