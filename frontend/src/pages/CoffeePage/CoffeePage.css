@@ -1,50 +1,30 @@
 
-  .coffee-container {
-    float: left;
-    min-height: 500px;
-    max-height: 1200px;
-    min-width: 400px;
-  }
   .coffee-card {
-    width: 21em;
-    height: auto;
-    float: left;
-    display: block;
-    position: relative;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 20px 10px;
-    border: 1px solid transparent;
+    width: 500px;
+    height: 825px;
+  }
+  .coffee-image-container {
+    min-height: 45%;
+    max-height: 55%;
+    width: 100%;
   }
   .coffee-card-img {
-    width: 100%;
-    height: auto;
+    min-height: 300px;
+    max-height: 400px;
+    min-width: 200px;
+    max-width: 475px;
+    object-fit: contain;
   }
-  .coffee-card-body {
-    height: 180px;
-    padding-bottom: 0px;
-  }
-  .card-body-title-area {
-    vertical-align: baseline;
-    height: 50px;
-  }
-  .card-body-description-area {
+  .coffee-description-area {
     vertical-align: text-top;
-    height: 80px;
+    height: 130px;
   }
   .coffee-qty-area {
     text-align: center;
     padding-bottom: 10px;
   }
   .coffee-qty-select {
-    font-size: 1rem;
-    margin: .5rem;
-    padding-left: .5rem;
-    text-align: center;
-  }
   .coffee-btns-area {
-    display: flex;
-    justify-content: center;
+    height: 50px;
   }
 
