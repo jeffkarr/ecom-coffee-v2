@@ -1,5 +1,5 @@
 
-  DROP TABLE coffee_items;
+  DROP TABLE IF EXISTS coffee_items;
 
 CREATE TABLE IF NOT EXISTS coffee_items (
     id character(2) PRIMARY KEY,
@@ -58,3 +58,63 @@ CREATE TABLE IF NOT EXISTS coffee_items (
       '../images/coffee/guatemalan-coffee-cropped.jpg'
     )
   
+  DROP TABLE IF EXISTS deal_items;
+
+  CREATE TABLE IF NOT EXISTS deal_items (
+      id character(2) PRIMARY KEY,
+      category character varying(255) NOT NULL,
+      name character varying(255) NOT NULL,
+      price numeric(5,2) NOT NULL,
+      description character varying(255) NOT NULL,
+      image character varying(255) NOT NULL
+  );
+
+  INSERT INTO deal_items VALUES      
+  (
+    'D1',
+    'deal',
+    'Ceramic Tea Pot',
+    8.00,
+    'This fine ceramic teapot is suitable for everyday household use. It has a 32 ounce capacity. Dishwasher and microwave safe.',
+    '../images/deal/ceramic-tea-kettle.jpg'
+  ),
+  (
+    'D2',
+    'deal',
+    'Metal Tea Infuser',
+    3.00,
+    'A great gift for tea lovers! Steeps perfect cups of loose-leaf tea and features a press handle for easy cleanup.',
+    '../images/deal/tea-infuser.jpg'
+  ),
+  (
+    'D3',
+    'deal',
+    'Hand Coffee Grinder',
+    15.00,
+    'A modern, sleek look with a glass container.',
+    '../images/deal/coffee-grinder.jpg'
+  ),
+  (
+    'D4',
+    'deal',
+    '200 Count #4 Coffee Filters',
+    3.00,
+    'Microfine perforations allow the full coffee flavor to filter through for a rich, flavorful cup of coffee.',
+    '../images/deal/coffee-filters.jpg'
+  ),
+  (
+    'D5',
+    'deal',
+    'Stoneware Sugar Bowl and Creamer Set',
+    20.00,
+    'Microwave and dishwasher safe. Creamer holds 12 ounces; sugar bowl with lid holds 1 cup.',
+    '../images/deal/sugar-bowl-creamer-set.jpg'
+  ),
+  (
+    'D6',
+    'deal',
+    'Semi Automatic Espresso Machine',
+    160.00,
+    'This Espresso Machine brings the coffeehouse to your home. So simple to use!',
+    '../images/deal/espresso-machine.jpg'
+  )

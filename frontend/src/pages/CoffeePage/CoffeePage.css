@@ -37,6 +37,12 @@
     text-align: center;
     padding-bottom: 10px;
   }
+  .coffee-qty-select {
+    font-size: 1rem;
+    margin: .5rem;
+    padding-left: .5rem;
+    text-align: center;
+  }
   .coffee-btns-area {
     display: flex;
     justify-content: center;
