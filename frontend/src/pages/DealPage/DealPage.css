@@ -1,7 +1,7 @@
 
   .deal-card {
     width: 500px;
-    height: 800px;
+    height: 775x;
   }
   .deal-image-container {
     height: 57%;
@@ -46,8 +46,6 @@
   }
   .deal-qty-select {
     font-size: 1rem;
-    margin: .5rem;
-    padding-left: .5rem;
     text-align: center;
   }
   .deal-btn-area {
