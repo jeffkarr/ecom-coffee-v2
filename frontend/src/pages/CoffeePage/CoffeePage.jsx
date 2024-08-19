@@ -110,6 +110,58 @@ const CoffeePage = () => {
                         <Col>
                           <h5>$ {item.price} USD</h5>
                         </Col>
+                      </Row>
+                    </CardBody>
+                  </div>
+                  <Form>
+                    <Container>
+                      <Row className="coffee-qty-area">
+                        <p><b>Quantity</b></p>
+                        <Col className="px-0">
+                          <Input
+                            className="coffee-qty-select"
+                            name="coffeeQty"
+                            type="select"
+                            onChange={handleChange}
+                          >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </Input>
+                        </Col>
+                      </Row>
+                      <Row className="coffee-btns-area text-center mt-3">
+                        <Col xs="12" sm="6" className="align-items-center my-2">
+                          <Button
+                            onClick={onAddCoffeeToWish}
+                            name="wishBtn"
+                            id={item.id}
+                            color="danger"
+                            className="btn btn-sm"
+                          >
+                            <FaHeart className="mx-2"/>
+                            Wish List
+                          </Button>
+                        </Col>
+                        <Col xs="12" sm="6" className="align-items-center my-2">
+                          <Button
+                            onClick={onAddCoffeeToCart}
+                            name="cartBtn"
+                            id={item.id}
+                            color="danger"
+                            className="btn btn-sm"
+                          >
+                            <FaShoppingCart className="mx-2"/>
+                            Add to Cart
+                          </Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Form>
+                </div>
+              </Card>
             </>
           ))
         :

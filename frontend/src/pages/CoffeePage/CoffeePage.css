@@ -24,6 +24,9 @@
     padding-bottom: 10px;
   }
   .coffee-qty-select {
+    font-size: 1rem;
+    text-align: center;
+  }
   .coffee-btns-area {
     height: 50px;
   }
