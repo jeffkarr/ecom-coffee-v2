@@ -113,18 +113,22 @@ const DealPage = ( ) => {
                   />
                 </div>
                 <div>
-                  <CardBody className="text-center deal-card-body">
-                    <div className="deal-card-body-title-area">
-                      <h5>{item.name}</h5>
-                    </div>
-                    <div className="deal-card-body-description-area">
-                      <p>
-                        <small>{item.description}</small>
-                      </p>
-                    </div>
-                    <div className="deal-card-body-price-area">
-                      <h5>$ {item.price} USD</h5>
-                    </div>
+                  <CardBody className="text-center">
+                    <Row>
+                      <Col>
+                        <h5>{item.name}</h5>
+                      </Col>
+                    </Row>
+                    <Row className="deal-description-area">
+                      <Col>
+                        <p>{item.description}</p>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <h5>$ {item.price} USD</h5>
+                      </Col>
+                    </Row>
                   </CardBody>
                 </div>
                 <Form>
@@ -138,7 +142,7 @@ const DealPage = ( ) => {
                       <Col className="px-0">
                         <Input
                           className="deal-qty-select"
-                          name="DealQty"
+                          name="dealQty"
                           type="select"
                           onChange={handleChange}
                         >
