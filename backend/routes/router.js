@@ -40,4 +40,14 @@ router.get('/getTeaItems', async (req, res) => {
   res.send(result);
 });
 
+router.get('/getAccessoryItems', async (req, res) => {
+
+  const result = await pgClient.query('select * from accessory_items');
+
+  console.log('----- results from call to db ----');
+  console.log(result.rows);
+  
+  res.send(result);
+});
+
 export default router;

@@ -179,3 +179,80 @@ CREATE TABLE IF NOT EXISTS coffee_items (
     'The Hindi term chai means a mix of spices steeped into a tea-like beverage.',
     '../images/tea/chai-tea-tin-display.png'
   )
+
+  DROP TABLE IF EXISTS accessory_items;
+
+  CREATE TABLE IF NOT EXISTS accessory_items (
+      id character(2) PRIMARY KEY,
+      category character varying(255) NOT NULL,
+      name character varying(255) NOT NULL,
+      price numeric(5,2) NOT NULL,
+      description character varying(255) NOT NULL,
+      image character varying(255) NOT NULL
+  );
+
+  INSERT INTO accessory_items VALUES     
+  (
+    'A1',
+    'accessory',
+    'Coffee Mug',
+    5.00,
+    'Microwave and dishwasher-safe porcelain coffee mug for practical and functional use.',
+    '../images/accessory/white-coffee-mug.jpg'
+  ),
+  (
+    'A2',
+    'accessory',
+    'Antique French Press Coffee Pot',
+    20.00,
+    'Nothing beats this antique styled coffee press when it comes to delivering delicious, perfectly brewed hot coffee.',
+    '../images/accessory/french-press-pot1.jpg'
+  ),
+  (
+    'A3',
+    'accessory',
+    'French Press Coffee Pot',
+    15.00,
+    'This pot brings out the optimal extraction of the essential oils in the beans to develop their full flavor profile in just four minutes.',
+    '../images/accessory/french-press-pot2.jpg'
+  ),
+  (
+    'A4',
+    'accessory',
+    'Silver Stovetop Espresso Maker',
+    25.00,
+    'There are many ways to enjoy an espresso, but there is only one way to create the flavors of a traditional Italian stovetop espresso.',
+    '../images/accessory/stovetop-espresso-maker-silver.jpg'
+  ),
+  (
+    'A5',
+    'accessory',
+    'Black Stovetop Espresso Maker',
+    30.00,
+    'A stovetop espresso maker produces a richer and tastier coffee than your regular coffee machine.',
+    '../images/accessory/stovetop-espresso-maker-black.jpg'
+  ),
+  (
+    'A6',
+    'accessory',
+    'Standard Coffee Maker',
+    40.00,
+    'The classic coffee maker helps you make rich-tasting, expertly brewed coffee without stress or mess. ',
+    '../images/accessory/coffeemaker1.png'
+  ),
+  (
+    'A7',
+    'accessory',
+    'Stainless Coffee Maker',
+    50.00,
+    'Taste perfectly brewed coffee in every sip with this 10-cup coffee maker.',
+    '../images/accessory/coffeemaker2.png'
+  ),
+  (
+    'A8',
+    'accessory',
+    'Modern Stainless Coffee Maker',
+    60.00,
+    'If youre a coffee connoisseur, youll need this sleek and functional 12-Cup coffee maker.',
+    '../images/accessory/coffeemaker3.png'
+  );

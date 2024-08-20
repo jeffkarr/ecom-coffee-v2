@@ -1,0 +1,38 @@
+.accessory-card {
+  width: 500px;
+  height: 825px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.accessory-image-container {
+  height: 57%;
+  width: 100%;
+}
+
+.accessory-card-img {
+  min-height: 350px;
+  max-height: 400px;
+  min-width: 200px;
+  max-width: 450px;
+  object-fit: contain;
+}
+
+.accessory-description-area {
+  vertical-align: text-top;
+  height: 120px;
+}
+
+.accessory-qty-area {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.accessory-qty-select {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.accessory-btn-area {
+  height: 50px;
+}
+
