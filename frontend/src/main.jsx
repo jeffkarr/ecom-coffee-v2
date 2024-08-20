@@ -7,6 +7,7 @@ import CoffeePage from './pages/CoffeePage';
 import DealPage from './pages/DealPage';
 import TeasPage from './pages/TeasPage';
 import AccessoriesPage from './pages/AccessoriesPage';
+import WishPage from './pages/WishPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 import './index.css'
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
   {
     path: '/accessories',
     element: <AccessoriesPage />,
+    errorElement: <NotFoundPage />
+  },
+  {
+    path: '/wish',
+    element: <WishPage />,
     errorElement: <NotFoundPage />
   }
 ]);
