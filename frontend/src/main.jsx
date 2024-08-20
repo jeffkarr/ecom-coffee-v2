@@ -8,6 +8,7 @@ import DealPage from './pages/DealPage';
 import TeasPage from './pages/TeasPage';
 import AccessoriesPage from './pages/AccessoriesPage';
 import WishPage from './pages/WishPage';
+import CartPage from './pages/CartPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 import './index.css'
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
   {
     path: '/wish',
     element: <WishPage />,
+    errorElement: <NotFoundPage />
+  },
+  {
+    path: '/cart',
+    element: <CartPage />,
     errorElement: <NotFoundPage />
   }
 ]);
