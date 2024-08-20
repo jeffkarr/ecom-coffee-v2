@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import HomePage from './pages/HomePage';
 import CoffeePage from './pages/CoffeePage';
 import DealPage from './pages/DealPage';
 import TeasPage from './pages/TeasPage';
+import AccessoriesPage from './pages/AccessoriesPage';
 import NotFoundPage from './pages/NotFoundPage';
-
 
 import './index.css'
 import './bootstrap.css';
@@ -39,6 +36,11 @@ const router = createBrowserRouter([
   {
     path: '/teas',
     element: <TeasPage />,
+    errorElement: <NotFoundPage />
+  },
+  {
+    path: '/accessories',
+    element: <AccessoriesPage />,
     errorElement: <NotFoundPage />
   }
 ]);
