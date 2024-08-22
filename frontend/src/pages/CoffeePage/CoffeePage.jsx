@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import CustomNavbar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
 import Wrapper from "../../components/Wrapper";
@@ -7,12 +8,17 @@ import { Card, CardBody, Button } from "reactstrap";
 import { Row, Col, Form, Input } from "reactstrap";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
+// import { addCoffeeToCart } from "../../actions/cartActions";
+import { coffeeCartAdd } from '../../slices/cartSlice';
+
 import "./CoffeePage.css";
 
 const CoffeePage = () => {
   const [coffees, setCoffees] = useState([]);
   const [coffeeQty, setCoffeeQty] = useState(1);
   
+  const dispatch = useDispatch();
+
   useEffect( () => {
 
     const fetchCoffeeItems = async () => {
@@ -38,8 +44,10 @@ const CoffeePage = () => {
   };
  
   const onAddCoffeeToCart = (e) => {
-    e.preventDefault();
+    e.preventDefault(e);
+    console.log('--- inside onAddCoffeeToCart function ---');
     let cartCoffeeItemId = e.target.id;
+    console.log(cartCoffeeItemId);
     let cartCoffeeItemQty = coffeeQty;
     let tempCartItem = coffees.filter(coffeeItem => coffeeItem.id === cartCoffeeItemId);
     let cartId = Math.floor(Math.random() * 1000) + 1;
@@ -53,7 +61,11 @@ const CoffeePage = () => {
       image: tempCartItem[0].image,
       quantity: cartCoffeeItemQty
     };
-    onAddCoffeeToCart(newCartItem);
+    console.log('--- newCartItem ---');
+    console.dir(newCartItem, {depth:null, colors:true});
+    dispatch(coffeeCartAdd(newCartItem))
+
+    // addCoffeeToCart(newCartItem);
     setCoffeeQty(1);
   }
 
