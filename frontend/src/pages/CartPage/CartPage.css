@@ -19,10 +19,6 @@
   min-width: 500px;
 }
 
-.table-item-name {
-  width: 8rem;
-}
-
 .billingForm {
   background-color: white;
   padding: 2em;
@@ -30,13 +26,4 @@
   border: 2px solid red;
   min-height: 916px;
   min-width: 400px;
-}
-
-.trash-can-div {
-  padding: 5px;
-  display: none;
-}
-
-.remove-cart-item-btn .trash-can-div {
-  display: block;
 }

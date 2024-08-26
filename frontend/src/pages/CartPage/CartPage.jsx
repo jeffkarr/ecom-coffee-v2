@@ -1,14 +1,24 @@
+
 import { useState } from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import CustomNavbar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
 
 import { Button, Container, Form, Input, Row, Col, Navbar, Table } from "reactstrap";
+import { FaRegTrashAlt  } from "react-icons/fa";
+
+import { getCartCosts, removeCartItem } from '../../slices/cartSlice';
 
 import "./CartPage.css";
 
 const CartPage = () => {
-  const [cartListItems, setCartListItems] = useState([]);
+
+  const dispatch = useDispatch();
+
+  const cartItemsList = useSelector( state => state.cart.cartItems, shallowEqual);
+
+  const cartCosts = useSelector( cartItemsList => getCartCosts(cartItemsList));
 
   const onSendOrder = () => {
     alert("Thank you for your order !");
@@ -17,8 +27,8 @@ const CartPage = () => {
 
   const onRemoveCartItem = (e) => {
     e.preventDefault();
-    // let removeCartId = e.target.id;
-    // this.props.onRemoveCartItem(removeCartId);
+    let removeCartId = e.target.id;
+    dispatch(removeCartItem(removeCartId))
   }
 
   return (
@@ -37,10 +47,10 @@ const CartPage = () => {
               <Container>
                 <h2 className="mb-4 text-center">Your Order</h2>
                 <div>
-                  <Table striped className="table-responsive-md">
-                    {!cartListItems.length ?
+                  <Table striped responsive >
+                    { cartItemsList.length === 0  ?
                       <tbody />
-                      :
+                    :
                       <thead>
                         <tr className="text-center">
                           <th />
@@ -51,7 +61,7 @@ const CartPage = () => {
                         </tr>
                       </thead>
                     }
-                    {!cartListItems.length ?
+                    { cartItemsList.length === 0  ?
                       <tbody className="text-center">
                         <tr>
                           <td>
@@ -61,40 +71,37 @@ const CartPage = () => {
                       </tbody>
                     :
                       <tbody>
-                        {cartListItems.map(item => {
-                          return 
-                            <tr className="text-center" key={item.cartId}>
-                            <th scope="row">
-                              <div className="trash-can-div">
-                                Remove
-                                  </div>
-                              <Button size="sm" data-toggle="tooltip" data-placement="top" title="Remove Item" id={item.cartId} className="remove-cart-item-btn" onClick={onRemoveCartItem}>
-                                <i className="fas fa-trash" id={item.cartId} />
-                              </Button>
-                            </th>
-                            <td className="table-item-name">
-                              <p>{item.name}</p>
-                            </td>
-                            <td>
-                              <p>{item.quantity}</p>
-                            </td>
-                            <td>
-                              <p>{item.price}</p>
-                            </td>
-                            <td>
-                              <p>
-                                {(item.price * item.quantity).toFixed(
-                                  2
-                                )}
-                              </p>
-                            </td>
-                          </tr>;
-                        })}
+                        { 
+                          cartItemsList.map( item => (
+                            <tr className="text-center align-middle" key={item.cartId}>
+                              <th scope="row">
+                                <Button color="light" size="md" id={item.cartId} onClick={onRemoveCartItem}>
+                                  <FaRegTrashAlt id={item.cartId} />
+                                </Button>
+                              </th>
+                              <td>
+                                <p className="pt-2">{item.name}</p>
+                              </td>
+                              <td>
+                                <p className="pt-2">{item.quantity}</p>
+                              </td>
+                              <td>
+                                <p className="pt-2">{item.price}</p>
+                              </td>
+                              <td>
+                                <p className="pt-2">
+                                  {(parseInt(item.price) * parseInt(item.quantity)).toFixed(2)}
+                                </p>
+                              </td>
+                            </tr>
+                          ))
+                        } 
                       </tbody>
                     }
-                    {!cartListItems.length ? 
+                    {cartItemsList.length === 0 ? 
                       <tbody /> 
-                    : <tbody>
+                    : 
+                      <tbody>
                         <tr className="text-center">
                           <th />
                           <th />
@@ -126,9 +133,7 @@ const CartPage = () => {
             </Col>
             <Col lg="5" className="billingForm">
               <Container>
-                <h2 className="mb-4 text-center">
-                  Billing Information
-                  </h2>
+                <h2 className="mb-4 text-center">Billing Information</h2>
                 <Form>
                   <Input type="text" name="first-name" id="firstName" placeholder="First Name" />
                   <br />
