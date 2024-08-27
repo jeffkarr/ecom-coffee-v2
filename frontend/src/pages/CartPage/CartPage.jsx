@@ -8,7 +8,8 @@ import Categories from "../../components/Categories";
 import { Button, Container, Form, Input, Row, Col, Navbar, Table } from "reactstrap";
 import { FaRegTrashAlt  } from "react-icons/fa";
 
-import { getCartCosts, removeCartItem } from '../../slices/cartSlice';
+import { getCartCosts, removeCartItem, cartCheckout } from '../../slices/cartSlice';
+import { wishCheckout } from '../../slices/wishSlice';
 
 import "./CartPage.css";
 
@@ -21,8 +22,9 @@ const CartPage = () => {
   const cartCosts = useSelector( cartItemsList => getCartCosts(cartItemsList));
 
   const onSendOrder = () => {
+    dispatch(cartCheckout());
+    dispatch(wishCheckout()); 
     alert("Thank you for your order !");
-    //TODO: rework this to use Alert component
   };
 
   const onRemoveCartItem = (e) => {

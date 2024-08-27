@@ -33,11 +33,18 @@ const wishSlice = createSlice({
       return {
         wishItems: tempCart
       }
-    }
+    },
+    wishCheckout: (state, action) => {
+      let tempCart = [];
+      localStorage.setItem('wish', JSON.stringify(tempCart))
+      return {
+        wishItems: tempCart
+      }
+    },
   }
 })
 
-export const { coffeeWishAdd, dealWishAdd, teaWishAdd, accessoryWishAdd, removeWishItem } = wishSlice.actions
+export const { coffeeWishAdd, dealWishAdd, teaWishAdd, accessoryWishAdd, removeWishItem, wishCheckout } = wishSlice.actions
 
 export default wishSlice.reducer
 
