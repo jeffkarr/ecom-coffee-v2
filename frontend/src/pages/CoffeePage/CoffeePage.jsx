@@ -21,20 +21,17 @@ const CoffeePage = () => {
   const dispatch = useDispatch();
 
   useEffect( () => {
-
     const fetchCoffeeItems = async () => {
       try {
         const res = await fetch('http://localhost:4100/coffeeItems');
         const data = await res.json();
         setCoffees(data.rows);
-
       } catch (error) {
         console.log('Error fetching coffeeItems', error);
         setCoffees([]);
       }
     }
     fetchCoffeeItems();
-
   }, []);
 
   const handleChange = (e) => {
