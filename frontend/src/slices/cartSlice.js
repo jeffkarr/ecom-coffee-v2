@@ -21,11 +21,15 @@ const cartSlice = createSlice({
       return {
         cartItems: tempCart
       }
-    }
+    },
+    wishCartAdd: (state, action) => {
+      state.cartItems.push(action.payload);
+      localStorage.setItem('cart', JSON.stringify(state.cartItems))
+    },
   }
 })
 
-export const { coffeeCartAdd, removeCartItem } = cartSlice.actions
+export const { coffeeCartAdd, removeCartItem, wishCartAdd } = cartSlice.actions
 
 export default cartSlice.reducer
 

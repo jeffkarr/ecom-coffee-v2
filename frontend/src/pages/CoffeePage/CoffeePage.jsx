@@ -10,6 +10,7 @@ import { Row, Col, Form, Input } from "reactstrap";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import { coffeeCartAdd } from '../../slices/cartSlice';
+import { coffeeWishAdd } from '../../slices/wishSlice';
 
 import "./CoffeePage.css";
 
@@ -65,22 +66,22 @@ const CoffeePage = () => {
 
   const onAddCoffeeToWish = (e) => {
     e.preventDefault();
-    // const wishCoffeeItemId = e.target.id;
-    // const wishCoffeeItemQty = coffeeQty;
-    // const tempWishItem = coffees.filter(coffeeItem => coffeeItem.id === wishCoffeeItemId);
-    // const wishId = Math.floor(Math.random() * 1000) + 1;
-    // const newWishItem = {
-    //   wishId: wishId,
-    //   itemId: tempWishItem[0].id,
-    //   category: tempWishItem[0].category,
-    //   name: tempWishItem[0].name,
-    //   price: tempWishItem[0].price,
-    //   description: tempWishItem[0].description,
-    //   image: tempWishItem[0].image,
-    //   quantity: wishCoffeeItemQty
-    // };
-    // this.props.onAddCoffeeToWish(newWishItem);
-    // setCoffeeQty(1);
+    const wishCoffeeItemId = e.target.id;
+    const wishCoffeeItemQty = coffeeQty;
+    const tempWishItem = coffees.filter(coffeeItem => coffeeItem.id === wishCoffeeItemId);
+    const wishId = Math.floor(Math.random() * 1000) + 1;
+    const newWishItem = {
+      wishId: wishId,
+      itemId: tempWishItem[0].id,
+      category: tempWishItem[0].category,
+      name: tempWishItem[0].name,
+      price: tempWishItem[0].price,
+      description: tempWishItem[0].description,
+      image: tempWishItem[0].image,
+      quantity: wishCoffeeItemQty
+    };
+    dispatch(coffeeWishAdd(newWishItem))
+    setCoffeeQty(1);
   }
 
   return (
