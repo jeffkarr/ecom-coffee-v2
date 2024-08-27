@@ -58,9 +58,7 @@ const CoffeePage = () => {
       image: tempCartItem[0].image,
       quantity: cartCoffeeItemQty
     };
-
     dispatch(coffeeCartAdd(newCartItem));
-
     setCoffeeQty(1);
   }
 
