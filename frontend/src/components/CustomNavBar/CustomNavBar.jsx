@@ -119,6 +119,7 @@ const CustomNavBar = () => {
           </Button>
         </ModalFooter>
       </Modal>
+      
       <Modal isOpen={cartModal} toggle={toggleCartModal}>
         <ModalHeader toggle={toggleCartModal}>
           Your Shopping Cart
