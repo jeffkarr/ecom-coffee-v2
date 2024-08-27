@@ -20,6 +20,10 @@ const cartSlice = createSlice({
       state.cartItems.push(action.payload);
       localStorage.setItem('cart', JSON.stringify(state.cartItems))
     },
+    accessoryCartAdd: (state, action) => {
+      state.cartItems.push(action.payload);
+      localStorage.setItem('cart', JSON.stringify(state.cartItems))
+    },
     removeCartItem: (state, action) => {
       let tempCart = state.cartItems.filter(cartTrxn => cartTrxn.cartId !== parseInt(action.payload));
       if(tempCart === null) {
@@ -37,7 +41,7 @@ const cartSlice = createSlice({
   }
 })
 
-export const { coffeeCartAdd, dealCartAdd, teaCartAdd, removeCartItem, wishCartAdd } = cartSlice.actions
+export const { coffeeCartAdd, dealCartAdd, teaCartAdd, accessoryCartAdd, removeCartItem, wishCartAdd } = cartSlice.actions
 
 export default cartSlice.reducer
 
