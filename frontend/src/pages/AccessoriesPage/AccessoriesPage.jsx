@@ -8,6 +8,10 @@ import { Card, CardBody, Button } from "reactstrap";
 import { Row, Col, Form, Input } from "reactstrap";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
+import { fetchWishItems } from "../../actions/wishActions";
+import { addAccessoryToCart } from "../../actions/cartActions";
+import { addAccessoryToWish } from "../../actions/wishActions";
+
 import "./AccessoriesPage.css";
 
 const AccessoriesPage = () => {

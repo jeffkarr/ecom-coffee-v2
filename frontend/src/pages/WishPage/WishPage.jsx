@@ -1,4 +1,5 @@
-import { useState } from 'react';
+
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import CustomNavbar from "../../components/CustomNavBar";
 import Categories from "../../components/Categories";
@@ -7,11 +8,59 @@ import { Button, Container, Col, Navbar, Table } from "reactstrap";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 
+
+import { getWishToCartItem, removeWishItem } from '../../slices/wishSlice';
+import { wishCartAdd } from '../../slices/cartSlice';
+
 import "./WishPage.css";
 
 const WishPage = () => {
-  const [wishListItems, setWishListItems] = useState([
-  ]);
+
+  const wishListItems = useSelector( state => state.wish.wishItems, shallowEqual);
+
+  const wishToCartItem = useSelector( state => getWishToCartItem(state));
+
+  const dispatch = useDispatch();
+
+  const getWishItemById = async (wishId, wishItems) => {
+    let wishItem = wishItems.filter(wishTrxn => wishTrxn.wishId === parseInt(wishId));
+    return wishItem;
+  };
+
+  function buildNewCartItem(wishToCartItem) {
+    const cartId = Math.floor(Math.random() * 1000) + 1;
+    const newCartItem = {
+      cartId: cartId,
+      itemId: wishToCartItem[0].itemId,
+      category: wishToCartItem[0].category,
+      name: wishToCartItem[0].name,
+      price: wishToCartItem[0].price,
+      description: wishToCartItem[0].description,
+      image: wishToCartItem[0].image,
+      quantity: wishToCartItem[0].quantity
+    };
+    return newCartItem;
+  }
+
+  const onAddWishItemToCart = async (e) => {
+    e.preventDefault();
+    const wishId = e.target.id;
+    const wishToCartItem = await getWishItemById(wishId, wishListItems);
+    const newCartItemFromWish = buildNewCartItem(wishToCartItem);
+
+    dispatch(wishCartAdd(newCartItemFromWish));
+
+    setTimeout( () => {
+      dispatch(removeWishItem(wishId));
+    }, 500);
+    
+  };
+
+  const onRemoveWishItem = (e) => {
+    e.preventDefault();
+    const removeWishId = e.target.id;
+    dispatch(removeWishItem(removeWishId));
+  };
 
   return (
     <div>
@@ -26,9 +75,7 @@ const WishPage = () => {
       </Container>
       <Container className="wishlist-container">
         <Table className="wishlist-table table-responsive-md">
-          {!wishListItems.length ? 
-            <tbody /> 
-          : <thead>
+            <thead>
               <tr className="text-center">
                 <th />
                 <th />
@@ -39,7 +86,6 @@ const WishPage = () => {
                 <th>Cost ($)</th>
               </tr>
             </thead>
-          }
           {!wishListItems.length ? 
             <tbody className="text-center">
               <tr>
