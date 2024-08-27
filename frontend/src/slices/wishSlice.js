@@ -16,6 +16,10 @@ const wishSlice = createSlice({
       state.wishItems.push(action.payload);
       localStorage.setItem('wish', JSON.stringify(state.wishItems))
     },
+    teaWishAdd: (state, action) => {
+      state.wishItems.push(action.payload);
+      localStorage.setItem('wish', JSON.stringify(state.wishItems))
+    },
     removeWishItem: (state, action) => {
       let tempCart = state.wishItems.filter(wishTrxn => wishTrxn.wishId !== parseInt(action.payload));
       if (tempCart === null) {
@@ -29,7 +33,7 @@ const wishSlice = createSlice({
   }
 })
 
-export const { coffeeWishAdd, dealWishAdd, removeWishItem } = wishSlice.actions
+export const { coffeeWishAdd, dealWishAdd, teaWishAdd, removeWishItem } = wishSlice.actions
 
 export default wishSlice.reducer
 
