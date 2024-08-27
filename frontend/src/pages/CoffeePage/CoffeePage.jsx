@@ -43,7 +43,7 @@ const CoffeePage = () => {
   };
  
   const onAddCoffeeToCart = (e) => {
-    e.preventDefault(e);
+    e.preventDefault();
     const cartCoffeeItemId = e.target.id;
     const cartCoffeeItemQty = coffeeQty;
     const tempCartItem = coffees.filter(coffeeItem => coffeeItem.id === cartCoffeeItemId);
@@ -59,7 +59,7 @@ const CoffeePage = () => {
       quantity: cartCoffeeItemQty
     };
 
-    dispatch(coffeeCartAdd(newCartItem))
+    dispatch(coffeeCartAdd(newCartItem));
 
     setCoffeeQty(1);
   }
