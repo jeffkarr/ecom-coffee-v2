@@ -1,7 +1,8 @@
+-- Active: 1725036593664@@127.0.0.1@5432@postgres
 
-  DROP TABLE IF EXISTS coffee_items;
+  -- DROP TABLE IF EXISTS coffee_items;
 
-CREATE TABLE IF NOT EXISTS coffee_items (
+  CREATE TABLE IF NOT EXISTS coffee_items (
     id character(2) PRIMARY KEY,
     category character varying(255) NOT NULL,
     name character varying(255) NOT NULL,
@@ -56,9 +57,9 @@ CREATE TABLE IF NOT EXISTS coffee_items (
       12.00,
       'from the north highland region, this coffee has distinctive but mild fruit.',
       '../images/coffee/guatemalan-coffee-cropped.jpg'
-    )
+    );
   
-  DROP TABLE IF EXISTS deal_items;
+  -- DROP TABLE IF EXISTS deal_items;
 
   CREATE TABLE IF NOT EXISTS deal_items (
       id character(2) PRIMARY KEY,
@@ -117,9 +118,9 @@ CREATE TABLE IF NOT EXISTS coffee_items (
     160.00,
     'This Espresso Machine brings the coffeehouse to your home. So simple to use!',
     '../images/deal/espresso-machine.jpg'
-  )
+  );
 
-  DROP TABLE IF EXISTS tea_items;
+  -- DROP TABLE IF EXISTS tea_items;
 
   CREATE TABLE IF NOT EXISTS tea_items (
       id character(2) PRIMARY KEY,
@@ -178,17 +179,17 @@ CREATE TABLE IF NOT EXISTS coffee_items (
     10.00,
     'The Hindi term chai means a mix of spices steeped into a tea-like beverage.',
     '../images/tea/chai-tea-tin-display.png'
-  )
+  );
 
-  DROP TABLE IF EXISTS accessory_items;
+  -- DROP TABLE IF EXISTS accessory_items;
 
   CREATE TABLE IF NOT EXISTS accessory_items (
-      id character(2) PRIMARY KEY,
-      category character varying(255) NOT NULL,
-      name character varying(255) NOT NULL,
-      price numeric(5,2) NOT NULL,
-      description character varying(255) NOT NULL,
-      image character varying(255) NOT NULL
+    id character(2) PRIMARY KEY,
+    category character varying(255) NOT NULL,
+    name character varying(255) NOT NULL,
+    price numeric(5,2) NOT NULL,
+    description character varying(255) NOT NULL,
+    image character varying(255) NOT NULL
   );
 
   INSERT INTO accessory_items VALUES     

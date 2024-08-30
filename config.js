@@ -1,5 +1,4 @@
 const env = process.env;
-
 const config = {
   db: { 
     host: env.DB_HOST,
@@ -9,5 +8,4 @@ const config = {
     database: env.DB_NAME,
   }
 };
-
-export default config;
+module.exports = config;

@@ -4,28 +4,46 @@ services:
     restart: always
     container_name: ecomm_db
     environment:
-      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes: 
       - db:/var/lib/postgresql/data
-      - ./db/init.sql:/docker-entrypoint-init-db.d
-  server:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks: 
+      - ecomm_network
+  backend:
     container_name: ecomm_backend
+    restart: unless-stopped
+
     build:
-        context: ./backend
-        dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-        - "4100:4100"
+      - "4100:4100"
     command: "npm start"
     environment:
-        DATABASE_URL: "${DB_URL}"
-        PORT: "${DB_PORT}"
-    # depends_on:
-    #     postgres:
-    #         condition: service_healthy
+      - DATABASE_URL="${DB_URL}"
+      - PORT="${DB_PORT}"
+    depends_on:
+      - db
+    networks: 
+      - ecomm_network
+  frontend:
+    container_name: ecomm_front
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: "npm start"
+    depends_on:
+      - db
+      - backend
+    networks: 
+      - ecomm_network
 volumes:
   db:
-    driver: local
+networks: 
+  ecomm_network: 
+    driver: bridge
