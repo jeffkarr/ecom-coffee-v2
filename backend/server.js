@@ -19,7 +19,7 @@ app.use( cors(corsOptions) );
 /* Please Note: app.use('/', router) must follow the app.use( cor(corsOptions) ) */
 app.use('/', router);
 
-const PORT = process.env.SERVER_PORT;
+const PORT = 4100;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

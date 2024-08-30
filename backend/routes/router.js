@@ -1,8 +1,7 @@
 import express from 'express';
 import pg from 'pg';
-const { Client } = pg; 
-
 import 'dotenv/config';
+const { Client } = pg; 
 
 const pgClient = new Client(process.env.DB_URL);
 
