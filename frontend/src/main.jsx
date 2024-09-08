@@ -12,8 +12,8 @@ import AccessoriesPage from './pages/AccessoriesPage';
 import WishPage from './pages/WishPage';
 import CartPage from './pages/CartPage';
 import NotFoundPage from './pages/NotFoundPage';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
-import './index.css'
 import './bootstrap.css';
 
 const router = createBrowserRouter([
@@ -58,6 +58,9 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />
   }
 ]);
+
+const appEnvironment = import.meta.env.VITE_NODE_ENV;
+if (appEnvironment === 'production') disableReactDevTools();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

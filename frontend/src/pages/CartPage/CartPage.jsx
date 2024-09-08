@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import CustomNavbar from "../../components/CustomNavBar";
@@ -29,7 +28,7 @@ const CartPage = () => {
 
   const onRemoveCartItem = (e) => {
     e.preventDefault();
-    let removeCartId = e.target.id;
+    let removeCartId = e.currentTarget.id;
     dispatch(removeCartItem(removeCartId))
   }
 

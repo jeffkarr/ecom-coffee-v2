@@ -27,12 +27,14 @@ const HomePage = () => {
         <Container fluid className="home-container">
         <CardGroup className="m-4">
               <Card className="m-2">
-                <CardImg
-                  top
-                  alt="coffee-category-img"
-                  src={coffeeCategoryImg}
-                  id="coffee-category-img"
-                />
+                <Link to="/coffees">
+                  <CardImg
+                    top
+                    alt="coffee-category-img"
+                    src={coffeeCategoryImg}
+                    id="coffee-category-img"
+                  />
+                </Link>
                 <CardBody>
                   <CardTitle>
                     <Row className="align-items-center">
@@ -51,12 +53,14 @@ const HomePage = () => {
                 </CardBody>
               </Card>
               <Card  className="m-2">
-                <CardImg
-                  top
-                  alt="tea-category-img"
-                  src={teaCategoryImg}
-                  id="tea-category-img"
-                />
+                <Link to="/teas">
+                  <CardImg
+                    top
+                    alt="tea-category-img"
+                    src={teaCategoryImg}
+                    id="tea-category-img"
+                  />
+                </Link>
                 <CardBody>
                   <CardTitle>
                     <Row className="align-items-center">
@@ -75,12 +79,14 @@ const HomePage = () => {
                 </CardBody>
               </Card>
               <Card  className="m-2">
-                <CardImg
-                  top
-                  alt="accessories-category-img"
-                  src={accessoriesCategoryImg}
-                  id="accessories-category-img"
-                />
+                <Link to="/accessories">
+                  <CardImg
+                    top
+                    alt="accessories-category-img"
+                    src={accessoriesCategoryImg}
+                    id="accessories-category-img"
+                  />
+                </Link>
                 <CardBody>
                   <CardTitle>
                     <Row className="align-items-center">

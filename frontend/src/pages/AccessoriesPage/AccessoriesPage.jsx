@@ -18,13 +18,19 @@ const AccessoriesPage = () => {
 
   const dispatch = useDispatch();
 
+  const appEnvironment = import.meta.env.VITE_NODE_ENV;
+  let apiUrl = '';
+  if (appEnvironment == 'development') {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_DEV_URL}`;
+  } else {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_PROD_URL}`;
+  }
+
   useEffect(() => {
     const fetchAccessoryItems = async () => {
       try {
-        const res = await fetch('http://localhost:4100/getAccessoryItems');
+        const res = await fetch(`${apiUrl}/api/getAccessoryItems`);
         const data = await res.json();
-        console.log('--- accessoryItems response data ---');
-        console.log(data.rows);
         setAccessories(data.rows);
       } catch (error) {
         console.log('Error fetching accessoryItems', error);

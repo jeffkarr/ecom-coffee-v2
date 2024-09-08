@@ -1,4 +1,3 @@
--- Active: 1725036593664@@127.0.0.1@5432@postgres
 
   -- DROP TABLE IF EXISTS coffee_items;
 
@@ -9,7 +8,7 @@
     price numeric(4,2) NOT NULL,
     description character varying(255) NOT NULL,
     image character varying(255) NOT NULL
-);
+  );
   INSERT INTO coffee_items VALUES 
     ( 'C1',
       'coffee',
@@ -70,7 +69,7 @@
       image character varying(255) NOT NULL
   );
 
-  INSERT INTO deal_items VALUES      
+  INSERT INTO deal_items VALUES
   (
     'D1',
     'deal',
@@ -131,7 +130,7 @@
       image character varying(255) NOT NULL
   );
 
-  INSERT INTO tea_items VALUES      
+  INSERT INTO tea_items VALUES
   (
     'T1',
     'tea',
