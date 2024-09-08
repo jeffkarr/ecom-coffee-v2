@@ -20,10 +20,19 @@ const CoffeePage = () => {
   
   const dispatch = useDispatch();
 
+  const appEnvironment = import.meta.env.VITE_NODE_ENV;
+  let apiUrl = '';
+  if (appEnvironment == 'development') {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_DEV_URL}`;
+  } else {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_PROD_URL}`;
+  }
+
   useEffect( () => {
     const fetchCoffeeItems = async () => {
+
       try {
-        const res = await fetch('http://localhost:4100/coffeeItems');
+        const res = await fetch(`${apiUrl}/api/getCoffeeItems`);
         const data = await res.json();
         setCoffees(data.rows);
       } catch (error) {

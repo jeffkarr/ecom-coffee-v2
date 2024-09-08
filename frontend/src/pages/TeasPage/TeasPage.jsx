@@ -20,14 +20,19 @@ const TeasPage = () => {
 
   const dispatch = useDispatch();
 
+  const appEnvironment = import.meta.env.VITE_NODE_ENV;
+  let apiUrl = '';
+  if (appEnvironment == 'development') {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_DEV_URL}`;
+  } else {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_PROD_URL}`;
+  }
+
   useEffect(() => {
     const fetchTeaItems = async () => {
       try {
-        const res = await fetch('http://localhost:4100/getTeaItems');
+        const res = await fetch(`${apiUrl}/api/getTeaItems`);
         const data = await res.json();
-        console.log('--- teaItems response data ---');
-        console.log(data.rows);
-
         setTeas(data.rows);
       } catch (error) {
         console.log('Error fetching teaItems', error);

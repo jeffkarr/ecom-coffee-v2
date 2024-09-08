@@ -20,14 +20,19 @@ const DealPage = ( ) => {
 
   const dispatch = useDispatch();
 
+  const appEnvironment = import.meta.env.VITE_NODE_ENV;
+  let apiUrl = '';
+  if (appEnvironment == 'development') {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_DEV_URL}`;
+  } else {
+    apiUrl = `${import.meta.env.VITE_REACT_APP_API_PROD_URL}`;
+  }
+
   useEffect( () => {
     const fetchDealItems = async () => {
       try {
-        const res = await fetch('http://localhost:4100/getDealItems');
+        const res = await fetch(`${apiUrl}/api/getDealItems`);
         const data = await res.json();
-        console.log('--- dealItems response data ---');
-        console.log(data.rows);
-
         setDeals(data.rows);
       } catch (error) {
         console.log('Error fetching dealItems', error);
