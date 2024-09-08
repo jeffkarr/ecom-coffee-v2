@@ -26,7 +26,7 @@ const NotFoundPage = () => {
         <Col xs="12" md={{ size: 6, offset: 3 }}>
           <List className="mb-0">
             <li><h4 className="mb-0">If you reached this error page by typing an address into your web browser, please verify that the spelling is correct and try reloading the page.</h4></li>
-            <li className="mt-3"><h4><span>Or, you may wish to return to the </span><Link to="/home">Home</Link><span> page.</span> </h4></li>
+            <li className="mt-3"><h4><span>Or, you may wish to return to the </span><Link to="/home">Home</Link><span> page.</span></h4></li>
           </List>
         </Col>  
       </Row>

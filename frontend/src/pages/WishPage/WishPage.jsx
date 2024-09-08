@@ -9,7 +9,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 
 
-import { getWishToCartItem, removeWishItem } from '../../slices/wishSlice';
+import { removeWishItem } from '../../slices/wishSlice';
 import { wishCartAdd } from '../../slices/cartSlice';
 
 import "./WishPage.css";
@@ -18,8 +18,6 @@ const WishPage = () => {
 
   const wishListItems = useSelector( state => state.wish.wishItems, shallowEqual);
 
-  const wishToCartItem = useSelector( state => getWishToCartItem(state));
-
   const dispatch = useDispatch();
 
   const getWishItemById = async (wishId, wishItems) => {
@@ -27,7 +25,7 @@ const WishPage = () => {
     return wishItem;
   };
 
-  function buildNewCartItem(wishToCartItem) {
+  const buildNewCartItem = async (wishToCartItem) => {
     const cartId = Math.floor(Math.random() * 1000) + 1;
     const newCartItem = {
       cartId: cartId,
@@ -44,21 +42,21 @@ const WishPage = () => {
 
   const onAddWishItemToCart = async (e) => {
     e.preventDefault();
-    const wishId = e.target.id;
+    const wishId = e.currentTarget.id;
     const wishToCartItem = await getWishItemById(wishId, wishListItems);
-    const newCartItemFromWish = buildNewCartItem(wishToCartItem);
+    const newCartItemFromWish = await buildNewCartItem(wishToCartItem);
 
-    dispatch(wishCartAdd(newCartItemFromWish));
-
-    setTimeout( () => {
-      dispatch(removeWishItem(wishId));
-    }, 500);
-    
+    if (newCartItemFromWish) {
+      dispatch(wishCartAdd(newCartItemFromWish));
+      setTimeout( () => {
+        dispatch(removeWishItem(wishId));
+      }, 500);
+    } 
   };
 
   const onRemoveWishItem = (e) => {
     e.preventDefault();
-    const removeWishId = e.target.id;
+    const removeWishId = e.currentTarget.id;
     dispatch(removeWishItem(removeWishId));
   };
 
@@ -101,12 +99,10 @@ const WishPage = () => {
                   <td className="text-center align-middle">
                     <div className="add-wish-item-to-cart-div" />
                     <Button 
-                      size="sm" data-toggle="tooltip" 
-                      data-placement="top" 
-                      title="Add Item to Cart" 
-                      id={item.wishId} 
+                      size="sm" 
                       className="add-wish-to-cart-btn" 
                       onClick={onAddWishItemToCart}
+                      id={item.wishId}
                     >
                       <FaCartPlus id={item.wishId} />
                     </Button>
@@ -114,9 +110,7 @@ const WishPage = () => {
                   <td className="text-center align-middle">
                     <div className="wish-item-trash-div" />
                     <Button 
-                      size="sm" data-toggle="tooltip" 
-                      data-placement="top" 
-                      title="Remove Item" 
+                      size="sm" 
                       id={item.wishId} 
                       className="remove-wish-item-btn" 
                       onClick={onRemoveWishItem}
