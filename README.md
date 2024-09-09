@@ -183,7 +183,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 10. Using a code editor, navigate to the /frontend/src/ folder and create a .env file within the /src folder. <br />
 
-11. Past the following environment variables into the newly created .env file: 
+11. Paste the following environment variables into the newly created .env file: 
     ```sh
       VITE_REACT_APP_API_DEV_URL="<your backend hostname and server port>"  (example: "http://localhost:5000") <br />
       VITE_REACT_APP_API_PROD_URL="<your production domain name or public IP address>"  (example: "example.com" or "http://123.456.789.10" )
@@ -191,14 +191,45 @@ _Below is an example of how you can instruct your audience on installing and set
     ``` 
     These variables allow the frontend server to communicate with the backend server. <br /> 
 
-12. Open a second terminal, and cd to your project folder. Then, cd into the /frontend folder. <br />
+12. Using a code editor, please navigate to the root of the project and create a .env file. <br />
 
-13. In the open second terminal, type "npm start". <br />
+13. Paste the following environment variables into the newly created .env file: 
+  ```sh
+    DB_HOST="ecomm_db"
+    DB_PORT=5432
+    DB_USER="postgres"
+    DB_PASSWORD="postgres"
+    DB_NAME="postgres"
+    DB_URL="postgresql://postgres:postgres@ecomm_db:5432/postgres"
+    SERVER_PORT=4100
+  ```
+  This .env file is used by the docker-compose command.<br />
+
+14. Open a second terminal, and cd to your project folder. Then, cd into the /frontend folder. <br />
+
+15. In the open second terminal, type "npm start". <br />
   This will start the web server for the front end of the application. <br />
 
-14. Open a web browser and type "http://localhost:3000" in the browser's address bar to view the application. <br />
+16. Open a web browser and type "http://localhost:3000" in the browser's address bar to view the running application. <br />
 
-15. To stop the servers, type Ctrl+C within each open terminal.  
+17. To stop the servers, type Ctrl+C within each open terminal.  
+
+18. If you choose to start the application using docker compose commands, please read the following steps <br />
+
+19. Please turn on the Docker Desktop application on your local machine.
+
+20. Open a terminal, then cd into the root directory of the project. Then, type the following command: 
+  ```sh
+    docker compose build     
+  ```
+21. After the docker compose build successfully finishes, type the following command: 
+  ```sh
+    docker compose up
+  ```
+22. Open a web browser and type "http://localhost:3000" in the browser's address bar to view the running application. <br />
+
+23. To stop the containers, type Ctrl+C in the open terminal. <br />
+  The console should indicate that the containers have stopped. <br />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
